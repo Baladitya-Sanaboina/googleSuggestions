@@ -8,6 +8,9 @@ class App extends Component{
   getSearch = event =>{
     this.setState({search_result: event.target.value})
   }
+  componentDidMount(){
+    this.getSuggestions()
+  }
   getSuggestions = async() =>{
     const {search_result} = this.state
     try{
@@ -23,6 +26,7 @@ class App extends Component{
       console.log(e)
     }
   }
+  
   render(){
     const {suggestions} = this.state
     return(
